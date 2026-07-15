@@ -1,0 +1,1297 @@
+/*-- -------------------------- -->
+<---   Side By Side Reverse     -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #sbsr-1162 {
+        padding: var(--sectionPadding);
+        /* clips grpahics from causing overflow issues */
+        overflow: hidden;
+        background-color: #f7f7f7;
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at desktop */
+            max-width: (550/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            max-width: (542/16rem);
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+        }
+
+        .cs-text {
+            margin-bottom: (16/16rem);
+            &:last-of-type {
+                margin-bottom: (32/16rem);
+            }
+        }
+
+        .cs-ul {
+            max-width: (630/16rem);
+            margin: 0 0 (32/16rem) 0;
+            padding: 0;
+            /* clips the bullets to create the half circle */
+            overflow: hidden;
+        }
+
+        .cs-li {
+            list-style: none;
+            margin: 0 0 (8/16rem) 0;
+            color: var(--bodyTextColor);
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: (12/16rem);
+            position: relative;
+
+            &:before {
+                /* bullet */
+                content: "";
+                width: (8/16rem);
+                height: (8/16rem);
+                margin-top: (8/16rem);
+                background: var(--secondary);
+                display: block;
+                /* prevents flexbox from squishing it */
+                flex: none;
+            }
+        }
+
+        .cs-button-solid {
+            font-size: (16/16rem);
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+            color: #000;
+            min-width: (150/16rem);
+            padding: 0 (24/16rem);
+            background-color: var(--primary);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
+
+            &:before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                background: #000;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                color: #fff;
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+
+        .cs-image-group {
+            /* scales the whole group based on the view width size and stop when that vales equals .8em, resets at desktop */
+            font-size: ~"min(2.15vw, .8em)";
+            width: (678/16em);
+            height: (588/16em);
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cs-picture {
+            position: absolute;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        .cs-picture1 {
+            width: (630/16em);
+            height: (390/16em);
+            top: 0;
+            right: 0;
+            z-index: 10;
+        }
+
+        .cs-picture2 {
+            width: (461/16em);
+            height: (300/16em);
+            bottom: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        .cs-graphic {
+            height: auto;
+            position: absolute;
+        }
+
+        .cs-graphic1 {
+            width: (1154/16em);
+            top: (20/16em);
+            left: (-60/16em);
+            transform: rotate(-165deg);
+        }
+
+        .cs-graphic2 {
+            width: (1085/16em);
+            top: (185/16em);
+            left: (-25/16em);
+        }
+
+        .cs-box {
+            width: (197/16em);
+            height: (178/16em);
+            padding: (8/16rem);
+            
+            /* prevents padding and border from affecting height and width */
+            box-sizing: border-box;
+            background-color: var(--primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: absolute;
+            z-index: 20;
+            right: 0;
+            bottom: 0;
+        }
+
+        .cs-number {
+            /* 20px - 39px */
+            font-size: clamp(1.25rem, 4vw, 2.4375rem);
+            text-align: center;
+            line-height: 1.2em;
+            font-weight: 700;
+            width: 100%;
+            /* 4px - 8px */
+            margin: 0 0 clamp(0.25rem, 1vw, 0.5rem);
+            color: var(--bodyTextColorWhite);
+            display: block;
+        }
+
+        .cs-desc {
+            /* 12px - 16px */
+            font-size: clamp(0.75rem, 1.9vw, 1rem);
+            text-align: center;
+            line-height: 1.2em;
+            font-weight: 700;
+            width: 100%;
+            max-width: 12ch;
+            margin: 0;
+            color: var(--bodyTextColorWhite);
+            display: block;
+        }
+    }
+}
+
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #sbsr-1162 {
+        .cs-container {
+            max-width: (1280/16rem);
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cs-image-group {
+            font-size: ~"min(1.2vw, 1em)";
+            flex: none;
+            /* sends it to the right in the 2nd position */
+            order: 2;
+        }
+    }
+}
+                                
+/*-- -------------------------- -->
+<---          Services          -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #services-1734 {
+        padding: var(--sectionPadding);
+        background-color: #F7F7F7;
+        position: relative;
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at tablet */
+            max-width: (584/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-title {
+            max-width: 12ch;
+            color: var(--headerColor);
+        }
+
+        .cs-text {
+            color: var(--bodyTextColor);
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            /* 16px - 20px */
+            column-gap: clamp(1rem, 2vw, 1.25rem);
+            row-gap: (32/16rem);
+        }
+
+        .cs-item {
+            list-style: none;
+            width: 100%;
+            grid-column: span 12;
+
+            &:hover {
+                .cs-picture {
+                    img {
+                        opacity: .3;
+                        transform: scale(1.2);
+                    }
+                }
+
+                .cs-h3 {
+                    color: var(--primary);
+                }
+            }
+        }
+    
+
+        .cs-link {
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            /* we use flexbox here to grow the link to fit the whole item, making it clickable everywhere, no matter the size */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* 12px - 20px */
+            gap: clamp(.75rem, 1.6vw, 1.25rem);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cs-picture {
+            width: 100%;
+            /* 300px - 380px */
+            height: clamp(12.5rem, 33vw, 26.25rem);
+            background-color: #000;
+            display: block;
+            position: relative;
+            z-index: -1;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                /* Makes img tag act as a background image */
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transition: transform ease-in-out 0.5s, opacity .3s;
+            }
+        }
+
+        .cs-flex {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .cs-h3 {
+            /* 20px - 25px */
+            font-size: clamp(1.25rem, 1.8vw, 1.5625rem);
+            text-transform: uppercase;
+            font-weight: 900;
+            line-height: 1.2em;
+            text-align: inherit;
+            margin: 0;
+            color: var(--headerColor);
+            transition: color 0.3s;
+        }
+
+        .cs-arrow {
+            width: (24/16rem);
+            height: auto;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #services-1734 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-content {
+            text-align: left;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .cs-title {
+            margin: 0;
+        }
+
+        .cs-text {
+            width: 50%;
+        }
+
+        .cs-item {
+            grid-column: span 3;
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---         Services           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #services-2414 {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            max-width: (630/16rem);
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+            gap: (32/16rem);
+        }
+
+        .cs-title {
+            max-width: 25ch;
+        }
+
+        .cs-text {
+            margin-bottom: (16/16rem);
+
+            &:last-of-type {
+                margin-bottom: (32/16rem);
+            }
+        }
+
+
+        .cs-card-group {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            /* 16px - 20px */
+            gap: clamp(1rem, 2.4vw, 1.25rem);
+        }
+
+                .cs-item {
+            width: 100%;
+            text-align: left;
+            list-style: none;
+            margin: 0;
+            padding: clamp(.75rem, 1vw, 1.25rem);
+            border-radius: (12/16rem);
+            background-color: #fff;
+            overflow: hidden;
+            box-sizing: border-box;
+            grid-column: span 12;
+            grid-row: span 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            position: relative;
+            z-index: 1;
+            transition: transform .3s, box-shadow .3s;
+
+            &:before {
+                content: '';
+                width: 100%;
+                height: 100%;
+                background: var(--primary);
+                opacity: .05;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+
+            &:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 12px 30px rgba(0,0,0,.12);
+
+                .cs-picture img {
+                    transform: scale(1.06);
+                }
+
+                .cs-h3 {
+                    color: var(--primary);
+                }
+            }
+        }
+
+                .cs-link {
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .cs-picture {
+            width: 100%;
+            height: 45vw;
+            max-height: (350/16rem);
+            margin-bottom: clamp(.75rem, 2vw, 1rem);
+            border-radius: (8/16rem);
+            overflow: hidden;
+            display: block;
+            position: relative;
+            z-index: 1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: transform .3s;
+            }
+        }
+
+        .cs-h3 {
+            /* 16px - 20px */
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            line-height: 1.2em;
+            font-weight: bold;
+            text-align: inherit;
+            margin: 0;
+            color: var(--headerColor);
+        }
+
+        .cs-image-group {
+            width: 100%;
+            max-width: (704/16rem);
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: (42/16rem);
+            position: relative;
+            z-index: 1;
+        }
+
+        .cs-map {
+            width: 89%;
+            height: 79vw;
+            max-height: (400/16rem);
+            overflow: hidden;
+            display: block;
+            position: relative;
+            z-index: 1;
+
+            &:before {
+                content: '';
+                background: radial-gradient(ellipse at center,  
+                rgba(255,255,255,0) 33%,
+                rgba(255,255,255,0.03) 34%,
+                rgba(255,255,255,0.57) 54%,
+                rgba(255,255,255,1) 70%,
+                rgba(255,255,255,1) 88%);
+                pointer-events: none;
+                opacity: 1;
+                display: block;
+                position: absolute;
+                top: -1px;
+                left: -1px;
+                right: -1px;
+                bottom: -1px;
+                z-index: 2;
+            }
+
+            img, iframe {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+        }
+
+        .cs-arrow {
+            width: (36/16rem);
+            height: auto;
+            margin-right: (20/16rem);
+            display: block;
+            position: absolute;
+            bottom: (75/16rem);
+            right: 50%;
+            z-index: 3;
+            transform: rotate(-137deg);
+        }
+
+        .cs-box {
+            text-align: center;
+            width: 40vw;
+            max-width: (177/16rem);
+            margin-right: (250/16rem);
+            /* 12px - 16px top & bottom */
+            /* 12px - 24px left & right */
+            padding: clamp(.75rem, 3vw, 1rem) clamp(.75rem, 3vw, 1.5rem);
+            box-sizing: border-box;
+            background-color: #fff;
+            border-radius: (16/16rem);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+
+            &:before {
+                /* background color */
+                content: '';
+                width: 100%;
+                height: 100%;
+                background: var(--primary);
+                border-radius: (16/16rem);
+                opacity: .1;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+
+            &:after {
+                /* border color */
+                content: '';
+                width: 100%;
+                height: 100%;
+                border: 4px solid var(--primary);
+                border-radius: (16/16rem);
+                opacity: .2;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+        }
+
+        .cs-box-text {
+            /* 12px - 16px */
+            font-size: clamp(.75rem, 3vw, 1rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            width: 100%;
+            margin: 0;
+            color: var(--headerColor);
+            display: block;
+        }
+    }
+}
+
+/* Tablet - 700px */
+@media only screen and (min-width: 43.75rem) {
+    #services-2414 {
+
+        .cs-item {
+            grid-column: span 6;
+        }
+
+        .cs-box {
+            margin-right: (350/16rem);
+        }
+
+        .cs-picture {
+            height: auto;
+            min-height: (212/16rem);
+            max-height: 100%;
+        }
+
+        .cs-arrow {
+            margin-right: (60/16rem);
+            bottom: (100/16rem);
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #services-2414 {
+        .cs-container {
+            align-items: flex-end;
+        }
+
+        .cs-content {
+            text-align: left;
+            width: 54vw;
+            box-sizing: border-box;
+            align-items: flex-start;
+        }
+
+        .cs-flex {
+            padding-bottom: 0;
+        }
+
+        .cs-card-group {
+            /* 200px - 325px */
+            padding-left: clamp(12.5rem, 20vw + 1rem, 20.3125rem);
+        }
+
+        .cs-item {
+            grid-column: span 3;
+        }
+
+        .cs-picture {
+            max-height: (200/16rem);
+        }
+        
+        .cs-image-group {
+            width: 41vw;
+            max-width: (522/16rem);
+            height: auto;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: (-20/16rem);
+        }
+
+        .cs-map {
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+            position: absolute;
+            top: 0;
+            bottom: (132/16rem);
+        }
+
+        .cs-box {
+            margin: 0;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    }
+}
+
+/* Large Desktop - 1300px */
+@media only screen and (min-width: 81.25rem) {
+    #services-2414 {
+        .cs-map {
+            bottom: (70/16rem);
+        }
+
+        .cs-arrow {
+            margin-right: (30/16rem);
+            bottom: (70/16rem);
+        }
+    }
+}
+                                
+
+/*-- -------------------------- -->
+<---           Steps            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #steps-1171 {
+        padding: var(--sectionPadding);
+        background-color: #1a1a1a;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at desktop */
+            max-width: (704/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-text {
+            font-size: var(--bodyFontSize);
+            line-height: 1.5em;
+            text-align: inherit;
+            width: 100%;
+            max-width: (650/16rem);
+            margin: 0;
+            color: var(--bodyTextColor);
+        }
+
+        .cs-topper {
+            color: var(--secondary);
+        }
+
+        .cs-title,
+        .cs-text {
+            color: var(--bodyTextColorWhite);
+        }
+
+        .cs-text {
+            opacity: 0.8;
+        }
+
+        .cs-card-group {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: (20/16rem);
+        }
+
+        .cs-item {
+            text-align: center;
+            list-style: none;
+            display: flex;
+            grid-column: span 12;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+
+            &:last-of-type {
+                &:after {
+                    display: none;
+                }
+            }
+
+            &:nth-of-type(even) {
+                &:after {
+                    /* scaleX -1 flips it horizontally */
+                    transform: rotate(-135deg) scaleX(-1);
+                }
+            }
+
+            &:after {
+                content: "";
+                position: relative;
+                display: block;
+                /* 54px - 84px */
+                width: clamp(3.375rem, 6vw, 5.25rem);
+                height: clamp(3.375rem, 6vw, 5.25rem);
+                margin-top: (20/16rem);
+                background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/curved-arrow.svg");
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                opacity: 1;
+                transform: rotate(135deg);
+            }
+        }
+
+        .cs-picture {
+            margin-bottom: (24/16rem);
+            width: (88/16rem);
+            height: (88/16rem);
+            border: 1px solid rgba(255, 252, 243, 0.5);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cs-icon {
+            width: (40/16rem);
+            height: auto;
+            display: block;
+        }
+
+        .cs-h3 {
+            font-size: (20/16rem);
+            line-height: 1.2em;
+            text-align: inherit;
+            margin: 0 0 (12/16rem) 0;
+            color: var(--bodyTextColorWhite);
+        }
+
+        .cs-item-p {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            text-align: inherit;
+            max-width: (342/16rem);
+            margin: 0;
+            color: var(--bodyTextColorWhite);
+            opacity: 0.8;
+        }
+
+        .cs-graphic {
+            width: (840/16rem);
+            height: auto;
+            opacity: 0.05;
+            position: absolute;
+            top: (-80/16rem);
+            left: (-80/16rem);
+            transform: rotate(-10deg);
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #steps-1171 {
+        .cs-item {
+            grid-column: span 6;
+
+            &:nth-of-type(2) {
+                &:after {
+                    display: none;
+                }
+            }
+
+            &:nth-of-type(1) {
+                &:after {
+                    transform: rotate(135deg) scaleX(-1);
+                }
+            }
+
+            &:after {
+                margin: 0;
+                position: absolute;
+                right: (-40/16rem);
+                top: 0;
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #steps-1171 {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-item {
+            grid-column: span 3;
+
+            &:nth-of-type(2) {
+                &:after {
+                    display: block;
+                    transform: rotate(45deg);
+                }
+            }
+
+            &:nth-of-type(3) {
+                &:after {
+                    display: block;
+                    transform: rotate(135deg) scaleX(-1);
+                }
+            }
+
+            &:after {
+                right: (-48/16rem);
+            }
+        }
+    }
+}
+                                
+
+/*-- -------------------------- -->
+<---          Gallery           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #gallery-1446 {
+        padding: var(--sectionPadding);
+    
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+            position: relative;
+        }
+
+        .cs-content {
+            text-align: left;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: (24/16rem);
+        }
+
+        .cs-title {
+            margin: 0;
+        }
+
+        .cs-gallery {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(19.0625rem, 1fr));
+            /* 16px - 20px */
+            gap: clamp(1rem, 1.5vw, 1.25rem);
+            position: relative;
+        }
+
+        .cs-image {
+            /* 260px - 360px */
+            min-height: clamp(16.25rem, 60vw, 20rem);
+            border-radius: (16/16rem);
+            /* clips the image corners */
+            overflow: hidden;
+            display: block;
+            position: relative;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                /* makes it act like a background image */
+                object-fit: cover;
+            }
+        }
+    }
+}
+                                
+/*-- -------------------------- -->
+<---            FAQ             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #faq-489 {
+        padding: var(--sectionPadding);
+        background: #fafbfc;
+
+        .cs-container {
+            width: 100%;
+            /* changes to 1280px at tablet */
+            max-width: (550/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            /* 40px - 48px */
+            gap: clamp(2.5rem, 5vw, 3rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+        }
+
+        .cs-color {
+            color: var(--primary);
+        }
+        .cs-title {
+            /* 17 characters wide including spaces */
+            max-width: 17ch;
+        }
+
+        .cs-text {
+            /* 32px - 48px */
+            margin-bottom: clamp(2rem, 3vw, 3rem);
+        }
+
+        .cs-button-solid {
+            font-size: (16/16rem);
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+            color: #fff;
+            min-width: (150/16rem);
+            padding: 0 (24/16rem);
+            background-color: var(--primary);
+            border-radius: (4/16rem);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
+
+            &:before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                background: #000;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                border-radius: (4/16rem);
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+
+        .cs-faq-group {
+            max-width: (740/16rem);
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: (20/16rem);
+        }
+
+        .cs-faq-item {
+            list-style: none;
+            width: 100%;
+            /* prevents border from affecting width and height */
+            box-sizing: border-box;
+            border: 1px solid #f1f1f4;
+            transition:
+                border 0.3s,
+                padding 0.3s,
+                border-color 0.3s;
+
+            &:hover {
+                border-color: var(--primary);
+            }
+
+            &.active {
+                padding-bottom: (16/16rem);
+                border-color: var(--primary);
+                .cs-button {
+                    color: var(--primary);
+                    &:before {
+                        transform: translateY(-50%) rotate(180deg);
+                        opacity: 0;
+                        background-color: var(--primary);
+                    }
+                    &:after {
+                        transform: translateY(-50%) rotate(360deg);
+                        background-color: var(--primary);
+                    }
+                }
+                .cs-item-p {
+                    height: auto;
+                    margin-top: (8/16rem);
+                    opacity: 1;
+                }
+            }
+        }
+
+        .cs-button {
+            /* 20px - 25px */
+            font-size: clamp(1.25rem, 1vw, 1.5625rem);
+            line-height: 1.2em;
+            text-align: left;
+            font-weight: bold;
+            padding: (16/16rem) (24/16rem);
+            border: none;
+            background: transparent;
+            color: var(--headerColor);
+            display: block;
+            width: 100%;
+            position: relative;
+            transition:
+                background-color 0.3s,
+                color 0.3s;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:before {
+                /* horizontal line */
+                content: "";
+                width: (16/16rem);
+                height: (3/16rem);
+                background-color: currentColor;
+                opacity: 1;
+                border-radius: 1px;
+                position: absolute;
+                display: block;
+                top: 50%;
+                right: (24/16rem);
+                transform: translateY(-50%);
+                transition:
+                    transform 0.5s,
+                    opacity 0.3s;
+            }
+
+            &:after {
+                /* vertical line */
+                content: "";
+                width: (16/16rem);
+                height: (3/16rem);
+                background-color: currentColor;
+                opacity: 1;
+                border-radius: 1px;
+                position: absolute;
+                display: block;
+                top: 50%;
+                right: (24/16rem);
+                transform: translateY(-50%) rotate(90deg);
+                transform-origin: center;
+                transition: transform 0.5s;
+            }
+        }
+
+        .cs-button-text {
+            width: 80%;
+            display: block;
+        }
+
+        .cs-item-p {
+            /* 14px - 16px */
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            line-height: 1.5em;
+            width: 90%;
+            height: 0;
+            margin: 0;
+            /* prevents padding and border from affecting height and width */
+            box-sizing: border-box;
+            padding: 0 (24/16rem);
+            opacity: 0;
+            color: var(--bodyTextColor);
+            /* clips the text so it doesn't show up */
+            overflow: hidden;
+            transition:
+                opacity 0.3s,
+                padding-bottom 0.3s;
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 48rem) {
+    #faq-489 {
+        .cs-container {
+            max-width: (1280/16rem);
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: (52/16rem);
+        }
+
+        .cs-content {
+            margin-top: (50/16rem);
+        }
+
+        .cs-title,
+        .cs-topper {
+            text-align: left;
+            margin-left: 0;
+        }
+
+        .cs-faq-group {
+            width: clamp(56%, 58vw, 58%);
+            flex: none;
+        }
+    }
+}
+
+                                

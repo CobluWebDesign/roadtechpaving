@@ -11,51 +11,97 @@
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #hero-143 {
-        /* Centers button */
-        text-align: center;
-        /* 144px - 300px - leaving extra space for the navigation */
-        padding: clamp(9rem, 25.95vw, 18.75rem) (16/16rem) 0;
-        /* 130px - 450px */
-        padding-bottom: clamp(12.125rem, 30.95vw, 28.125rem);
+    #hero-1957 {
+        /* removed at Tablet */
+        min-height: 100dvh;
+        padding: var(--sectionPadding);
+        /* 200px - 300px - leaving extra space for the navigation */
+        padding-top: clamp(12.5rem, 31.95vw, 18.75rem);
+        padding-right: clamp(1rem, 2.5vw, 1.25rem);
+        /* 16px - 20px */
+        padding-left: clamp(1rem, 2.5vw, 1.25rem);
+        display: flex;
+        align-items: flex-end;
         position: relative;
         z-index: 1;
-        /* Prevents white rectangle pseudos from overlapping the sections below */
-        overflow: hidden;
 
-        &:before {
-            /* Left side of the triangle */
-            content: "";
-            width: (500/16rem);
-            /* make really long so it covers the whole screen all the way to desktop */
-            height: (4000/16rem);
-            background: #fff;
-            opacity: 1;
-            transform: rotate(-67deg);
-            transform-origin: center;
-            position: absolute;
-            display: block;
-            bottom: (-2235/16rem);
-            /* this makes the right edge sit at the 50% line at all times */
-            right: 50%;
-            z-index: 0;
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* 60px - 180px */
+            gap: clamp(3.75rem, 13vw, 11.25rem);
         }
 
-        &:after {
-            /* Right side of the triangle */
-            content: "";
-            width: (500/16rem);
-            height: (4000/16rem);
-            background: #fff;
-            opacity: 1;
-            transform: rotate(67deg);
-            transform-origin: center;
-            position: absolute;
-            display: block;
-            bottom: (-2235/16rem);
-            /* this makes the left edge sit at the 50% line at all times */
-            left: 50%;
-            z-index: 0;
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            max-width: (554/16rem);
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+        }
+
+        .cs-topper {
+            margin-bottom: (8/16rem);
+            color: #fff;
+        }
+
+        .cs-title {
+            /* 39px - 61px */
+            font-size: clamp(2.4375rem, 5.975vw, 3.8125rem);
+            margin-bottom: (16/16rem);
+            color: #fff;
+        }
+
+        .cs-text {
+            /* 16px - 20px */
+            font-size: clamp(1rem, 1.95vw, 1.25rem);
+            /* 28px - 40px */
+            margin: 0 0 clamp(1.75rem, 2.5vw, 2.5rem) 0;
+            color: #fff;
+        }
+
+        .cs-button-solid {
+            font-size: (16/16rem);
+            font-weight: 700;
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+            margin: 0;
+            padding: 0 (24/16rem);
+            background-color: var(--primary);
+            color: #000;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+
+            &:before {
+                content: "";
+                width: 0%;
+                height: 100%;
+                background: #000;
+                opacity: 1;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                color: #fff;
+                &:before {
+                    width: 100%;
+                }
+            }
         }
 
         .cs-background {
@@ -72,88 +118,63 @@
                 content: "";
                 width: 100%;
                 height: 100%;
-                background: #000;
-                opacity: 0.7;
-                position: absolute;
+                background: linear-gradient(359deg, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0) 56.87%);
+                /* prevents the cursor from interacting with it */
+                pointer-events: none;
+                opacity: 1;
                 display: block;
+                position: absolute;
                 top: 0;
                 left: 0;
                 z-index: 1;
-                /* prevents the cursor from interacting with it */
-                pointer-events: none;
             }
 
             img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                /* makes the top of the image start at the top of the parent */
+                object-position: top;
                 position: absolute;
                 top: 0;
                 left: 0;
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
             }
-        }
-
-        .cs-container {
-            width: 100%;
-            max-width: (1280/16rem);
-            margin: auto;
-        }
-
-        .cs-title {
-            /* 39px - 61px */
-            font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
-            font-weight: 700;
-            line-height: 1.2em;
-            text-align: center;
-            max-width: (829/16rem);
-            /* 16px - 24px */
-            margin: 0 auto clamp(1rem, 4vw, 1.5rem);
-            color: #fff;
-            position: relative;
-
-            &:after {
-                /* Divider Line */
-                content: "";
-                /* 60px - 100px */
-                width: clamp(3.75rem, 9.5vw, 6.25rem);
-                /* 4px - 8px */
-                height: clamp(0.25rem, 0.8vw, 0.5rem);
-                /* 16px - 24px */
-                margin: clamp(1rem, 4vw, 1.5rem) auto clamp(1rem, 4vw, 1.5rem);
-                background: var(--primary);
-                opacity: 1;
-                position: relative;
-                display: block;
-            }
-        }
-
-        .cs-text {
-            /* 16px - 25px */
-            font-size: clamp(1rem, 1.95vw, 1.5625rem);
-            line-height: 1.5em;
-            text-align: center;
-            width: 100%;
-            /* 464px - 800px */
-            max-width: clamp(29rem, 60vw, 50rem);
-            margin: 0 auto;
-            /* 40px - 48px */
-            margin-bottom: clamp(2.5rem, 4vw, 3rem);
-            color: #fff;
         }
     }
 }
 
-/* Desktop - 1300px (To make image background parallax) */
-@media only screen and (min-width: 81.25rem) {
-    #hero-143 {
-        background: url("/assets/images/landing.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        /* makes the parallax effect */
-        background-attachment: fixed;
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #hero-1957 {
+        min-height: auto;
+        .cs-container {
+            align-items: flex-start;
+        }
+
+        .cs-content {
+            text-align: left;
+            margin-left: 0;
+            align-items: flex-start;
+        }
 
         .cs-background {
+            &:before {
+                background: linear-gradient(90deg, rgba(0, 0, 0, 0.4) 25.47%, rgba(0, 0, 0, 0) 50.01%);
+            }
+        }
+    }
+}
+
+/* Large Desktop Parallax Effect - 100px */
+@media only screen and (min-width: 100rem) {
+    #hero-1957 {
+        .cs-background {
+            background: url("https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/home/heroImg.webp");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            /* creates the parallax effect */
+            background-attachment: fixed;
             img {
                 display: none;
             }
@@ -161,168 +182,176 @@
     }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #hero-143 {
-            &:before,
-            &:after {
-                background: var(--dark);
-            }
-
-            .cs-background {
-                &:before {
-                    opacity: 0.85;
-                }
-            }
-        }
-    }
-}
-
 /*-- -------------------------- -->
-<---         Services           -->
+<---          Services          -->
 <--- -------------------------- -*/
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #h-services-143 {
-        /* 40px - 100px */
-        padding: 0 (16/16em) clamp(2.5rem, 7.9vw, 6.25rem) (16/16rem);
+    #services-1957 {
+        /* 16px - 20px */
+        padding: clamp(1rem, 2vw, 1.25rem);
         position: relative;
-        /* give a higher z index than the hero so it can sit on top */
-        z-index: 10;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1920/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* 16px - 20px */
+            gap: clamp(1rem, 2vw, 1.25rem);
+        }
 
         .cs-card-group {
             width: 100%;
-            max-width: (465/16rem);
-            margin: 0 auto 0;
-            /* negative margin pulls it up on top of the hero section */
-            /* -46px to -76px - we're calculating whatever clamp is and multiplying by -1
-            to make the value negative since clamp doesn't work with negative values */
-            margin-top: ~"calc(clamp(5rem, 13vw, 4.75rem)*-1)";
-            /* 40px - 60px top and bottom, 16px - 44px left & right */
-            padding: clamp(2.5rem, 4.7vw, 3.75rem) clamp(1rem, 5.3vw, 2.75rem);
-            box-shadow: 0px 20px 40px 0px rgba(0, 0, 0, 0.05);
-            border-radius: (5/16rem);
-            border-top: 8px solid var(--primary);
-            background-color: #fff;
-            /* prevents padding and border from affecting height and width */
-            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            /* 16px - 20px */
+            gap: clamp(1rem, 2.5vw, 1.25rem);
         }
 
         .cs-item {
+            text-align: left;
             list-style: none;
-            margin: 0 auto (32/16rem);
             width: 100%;
-            max-width: (360/16rem);
+            /* 280px - 337px */
+            min-height: clamp(17.5rem, 35vw, 21.0625rem);
+            margin: 0;
+            /* prevents padding and border from affecting height and width */
+            box-sizing: border-box;
+            padding: 0;
+            /* clips background image corners */
+            overflow: hidden;
+            box-shadow: 0px 12px 80px 0px rgba(26, 26, 26, 0.08);
+            border-radius: (16/16rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            grid-column: span 12;
+            grid-row: span 1;
+            position: relative;
+            z-index: 1;
 
-            &:last-of-type {
-                margin-bottom: 0;
+            &:hover {
+                .cs-item-background {
+                    img {
+                        transform: scale(1.3);
+                    }
+                }
             }
         }
 
-        .cs-icon {
-            /* 68px - 88px */
-            width: clamp(4.25rem, 8.8vw, 5.5rem);
-            /* 68px - 88px */
-            height: clamp(4.25rem, 8.8vw, 5.5rem);
-            margin: auto;
-            /* 20px - 24px */
-            margin-bottom: clamp(1.25rem, 5vw, 1.5rem);
+        .cs-link {
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+            /* 125px - 236px */
+            /* padding goes on the link, not the cs-item as is normal. We do this because we want the whole card to be hoverable. So we add the padding to the link tag to create the space inside the card. By adding the space inside the cs-link tag we can make the whole card hoverable since the padding is now contributing to the height and width of the link */
+            padding: (16/16rem);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .cs-icon-wrapper {
+            width: (48/16rem);
+            height: (48/16rem);
+            margin-left: auto;
             background: var(--primary);
-            border-radius: 50%;
+            box-shadow: 0px 4px 24px 0px rgba(0, 0, 0, 0.12);
+            border-radius: (12/16rem);
             display: flex;
             justify-content: center;
             align-items: center;
+            flex: none;
+        }
+
+        .cs-icon {
+            width: (32/16rem);
+            height: auto;
+        }
+
+        .cs-flex {
+            width: 100%;
+        }
+
+        .cs-topper {
+            margin-bottom: (8/16rem);
+            color: #fff;
+        }
+
+        .cs-h3 {
+            /* 20px - 25px */
+            font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+            font-weight: 700;
+            line-height: 1.2em;
+            text-align: inherit;
+            max-width: 19ch;
+            margin: 0 0 (12/16rem) 0;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        .cs-item-background {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+
+            &:before {
+                /* background color overlay */
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0) 57.04%, rgba(0, 0, 0, 0.5) 87.88%);
+                opacity: 1;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
 
             img {
-                /* 44px - 52px */
-                width: clamp(2.75rem, 5.8vw, 3.25rem);
-                height: auto;
+                width: 100%;
+                height: 100%;
+                /* Makes img tag act as a background image */
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: transform 0.6s, opacity 0.3s;
             }
-        }
-
-        .cs-title {
-            font-size: (20/16rem);
-            line-height: 1.2em;
-            text-transform: uppercase;
-            text-align: center;
-            margin: 0 auto (8/16rem);
-            color: var(--headerColor);
-        }
-
-        .cs-text {
-            font-size: (16/16rem);
-            text-align: center;
-            line-height: 1.5em;
-            max-width: (360/16rem);
-            margin: 0 auto;
-            color: var(--bodyTextColor);
         }
     }
 }
 
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-    #h-services-143 {
-        .cs-card-group {
-            max-width: (784/16rem);
-            /* -76px to -320px - we're calculating whatever clamp is and multiplying by -1
-               to make the value negative since clamp doesn't work with negative values */
-            margin-top: ~"calc(clamp(4.75rem, 20vw, 20rem)*-1)";
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            column-gap: (40/16rem);
-        }
-
+    #services-1957 {
         .cs-item {
-            width: 45%;
-            max-width: (314/16rem);
-            &:last-of-type {
-                margin-bottom: (32/16rem);
-            }
+            grid-column: span 6;
         }
     }
 }
 
-/* Desktop - 1300px */
+/* Large Desktop - 1300px */
 @media only screen and (min-width: 81.25rem) {
-    #h-services-143 {
-        .cs-card-group {
-            max-width: (1280/16rem);
-            flex-wrap: nowrap;
-        }
-
+    #services-1957 {
         .cs-item {
-            margin: 0;
-            &:last-of-type {
-                margin-bottom: 0;
-            }
+            grid-column: span 3;
         }
     }
 }
-
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #h-services-143 {
-            .cs-card-group {
-                background: var(--medium);
-            }
-
-            .cs-icon {
-                background: var(--darkTint);
-            }
-
-            .cs-title {
-                color: #fff;
-            }
-
-            .cs-text {
-                color: #fff;
-            }
-        }
-    }
-}
+                                

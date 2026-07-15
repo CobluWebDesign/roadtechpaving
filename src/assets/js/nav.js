@@ -3,6 +3,7 @@
 	const CONFIG = {
 		BREAKPOINTS: {
 			MOBILE: 1023.5,
+			TABLET: 768,
 		},
 		SELECTORS: {
 			body: "body",
@@ -12,12 +13,12 @@
 			dropdownToggle: ".cs-dropdown-toggle",
 			dropdown: ".cs-dropdown",
 			dropdownMenu: ".cs-drop-ul",
-			navButton: ".cs-nav-button",
-			darkModeToggle: "#dark-mode-toggle",
+			topBar: ".cs-top-bar",
 		},
 		CLASSES: {
 			active: "cs-active",
 			menuOpen: "cs-open",
+			scroll: "scroll",
 		},
 	};
 
@@ -27,12 +28,12 @@
 		navigation: document.querySelector(CONFIG.SELECTORS.navigation),
 		hamburger: document.querySelector(CONFIG.SELECTORS.hamburger),
 		menuWrapper: document.querySelector(CONFIG.SELECTORS.menuWrapper),
-		navButton: document.querySelector(CONFIG.SELECTORS.navButton),
-		darkModeToggle: document.querySelector(CONFIG.SELECTORS.darkModeToggle),
+		topBar: document.querySelector(CONFIG.SELECTORS.topBar),
 	};
 
 	// Utilities
 	const isMobile = () => window.matchMedia(`(max-width: ${CONFIG.BREAKPOINTS.MOBILE}px)`).matches;
+	const isTablet = () => window.matchMedia(`(min-width: ${CONFIG.BREAKPOINTS.TABLET}px)`).matches;
 
 	const toggleAttribute = (element, attribute, value1 = "true", value2 = "false") => {
 		if (!element) return;
@@ -193,6 +194,21 @@
 		},
 	};
 
+	// Scroll Effects Management
+	const scrollManager = {
+		handleScrollEffects() {
+			const scrollPosition = document.documentElement.scrollTop;
+			const isScrolled = scrollPosition >= 100;
+
+			elements.body.classList.toggle(CONFIG.CLASSES.scroll, isScrolled);
+
+			// Handle top bar inert state on tablet and up when scrolling
+			if (elements.topBar && isTablet()) {
+				elements.topBar.inert = isScrolled;
+			}
+		},
+	};
+
 	// Initialization & Setup
 	const init = {
 		inertState() {
@@ -208,6 +224,16 @@
 				dropdownMenus.forEach((dropdown) => {
 					dropdown.inert = true;
 				});
+			}
+
+			// Initialize top bar inert state based on current scroll position and viewport
+			if (elements.topBar && isTablet()) {
+				const scrollPosition = document.documentElement.scrollTop;
+				const isScrolled = scrollPosition >= 100;
+				elements.topBar.inert = isScrolled;
+			} else if (elements.topBar) {
+				// On mobile, top bar should never be inert
+				elements.topBar.inert = false;
 			}
 		},
 
@@ -234,6 +260,7 @@
 			// Global events
 			document.addEventListener("keydown", (e) => e.key === "Escape" && keyboardManager.handleEscape());
 			document.addEventListener("focusin", eventManager.handleMobileFocus);
+			document.addEventListener("scroll", () => scrollManager.handleScrollEffects());
 
 			// Resize handling
 			window.addEventListener("resize", () => {
@@ -249,3 +276,4 @@
 	init.inertState();
 	init.eventListeners();
 })();
+                                

@@ -1,0 +1,477 @@
+---
+title: "Contact | Code Stitch Web Designs"
+description: "Meta description for the page"
+permalink: "/services/"
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/services.css">
+    <link rel="preload" as="image" href="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}"/>
+    <link rel="preload" as="image" href="{% getUrl "/assets/images/construction.jpg" | resize({ width: 576, height: 640 }) | avif %}"/>
+{% endblock %}
+
+{% block body %}
+
+   <!-- ============================================ -->
+<!--                     Banner                     -->
+<!-- ============================================ -->
+
+<section id="cta-1071">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex">
+                <span class="cs-topper">Get Our Services</span>
+                <h2 class="cs-title">Let’s Get You Back On The Road Faster. Schedule Now!</h2>
+            </div>
+            <div class="cs-button-box">
+                <a href="" class="cs-button-solid">Schedule Our Services</a>
+                <a href="" class="cs-button-transparent">Contact Us</a>
+            </div>
+        </div>
+    </div>
+    <picture class="cs-background">
+        <!--Mobile Image-->
+        <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/misc/BannerPave.webp">
+        <!--Tablet and above Image-->
+        <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/misc/BannerPave.webp">
+        <img loading="lazy" decoding="async" src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/misc/BannerPave.webp" alt="mechanic" width="1280" height="568">
+    </picture>
+</section> 
+
+   <!-- ============================================ -->
+<!--             Side By Side Reverse             -->
+<!-- ============================================ -->
+
+<section id="sbsr-1162">
+    <div class="cs-container">
+        <div class="cs-image-group">
+            <!--Top left image-->
+            <picture class="cs-picture cs-picture1">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/home/heroImg.webp">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/home/heroImg.webp">
+                <img loading="lazy" decoding="async" src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/home/heroImg.webp" alt="appliance" width="630" height="390">
+            </picture>
+            <!--Bottom right image-->
+            <picture class="cs-picture cs-picture2">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/misc/locationsImgOpt.webp">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/misc/locationsImgOpt.webp">
+                <img loading="lazy" decoding="async" src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/misc/locationsImgOpt.webp" alt="appliance" width="461" height="300">
+            </picture>
+            <!--Splash Graphic-->
+            <img class="cs-graphic cs-graphic1" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/splash-reverse.svg" alt="splash" width="1154" height="505" aria-hidden="true">
+            <!--Tire Mark-->
+            <img class="cs-graphic cs-graphic2" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/tire-reverse.svg" alt="tire mark" width="1085" height="322" aria-hidden="true">
+            <div class="cs-box">
+                <span class="cs-number">4.7 ★</span>
+                <span class="cs-desc">Google Rating</span>
+            </div>
+        </div>
+        <div class="cs-content">
+            <span class="cs-topper">Why Choose Road Tech Paving</span>
+            <h2 class="cs-title">Quality Asphalt Paving Built to Last</h2>
+            <p class="cs-text">
+                Whether you're installing a new asphalt driveway, paving a commercial parking lot, repairing damaged pavement, or protecting your investment with professional sealcoating, Road Tech Paving LLC delivers quality workmanship backed by four generations of experience. From proper site preparation to the final walkthrough, we're committed to providing durable asphalt solutions and honest service you can rely on.            </p>
+            <ul class="cs-ul">
+                <li class="cs-li">Residential & Commercial Asphalt Paving</li>
+                <li class="cs-li">Quality Materials & Skilled Workmanship</li>
+                <li class="cs-li">Written Contracts & Honest Pricing</li>
+                <li class="cs-li">Customized Paving Solutions</li>
+                <li class="cs-li">Free Estimates for Every Project</li>
+            </ul>
+            <a href="" class="cs-button-solid">Call Now</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                    Services                  -->
+<!-- ============================================ -->
+
+<section id="services-1734">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-wrapper">
+                <span class="cs-topper">Our Services</span>
+                <h2 class="cs-title">Complete Asphalt Paving Solutions</h2>
+            </div>
+            <p class="cs-text">
+                    From new asphalt driveway installations to commercial parking lots, repairs, and preventative maintenance, we provide professional paving services designed to improve the appearance, durability, and long-term value of your property.            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/residential/residentialHero.webp">
+                        <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/residential/residentialHero.webp">
+                        <img decoding="async" src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/residential/residentialHero.webp" alt="man exercising in a class" width="384" height="480" aria-hidden="true" loading="lazy">
+                    </picture>
+                    <div class="cs-flex">
+                        <h3 class="cs-h3">Residential Paving</h3>
+                        <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/black%20upper%20right%20arrow.svg" alt="arrow icon" width="24" height="24" aria-hidden="true">
+                    </div>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/commercial/commercialHero.webp">
+                        <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/commercial/commercialHero.webp">
+                        <img decoding="async" src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/commercial/commercialHero.webp" alt="man flexing his muscles in a gym" width="384" height="480" aria-hidden="true" loading="lazy">
+                    </picture>
+                    <div class="cs-flex">
+                        <h3 class="cs-h3">Commercial Paving</h3>
+                        <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/black%20upper%20right%20arrow.svg" alt="arrow icon" width="24" height="24" aria-hidden="true">
+                    </div>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/repairs/repairHero.webp">
+                        <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/repairs/repairHero.webp">
+                        <img decoding="async" src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/repairs/repairHero.webp" alt="man lifting weights in a gym" width="384" height="480" aria-hidden="true" loading="lazy">
+                    </picture>
+                    <div class="cs-flex">
+                        <h3 class="cs-h3">Paving Repairs</h3>
+                        <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/black%20upper%20right%20arrow.svg" alt="arrow icon" width="24" height="24" aria-hidden="true">
+                    </div>
+                </a>
+            </li>
+            <li class="cs-item">
+                <a href="" class="cs-link">
+                    <picture class="cs-picture">
+                        <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/sealcoating/sealcoatingFixOne.webp">
+                        <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/sealcoating/sealcoatingFixOne.webp">
+                        <img decoding="async" src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/sealcoating/sealcoatingFixOne.webp" alt="man cycling on a bike" width="384" height="480" aria-hidden="true" loading="lazy">
+                    </picture>
+                    <div class="cs-flex">
+                        <h3 class="cs-h3">Sealcoating</h3>
+                        <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/black%20upper%20right%20arrow.svg" alt="arrow icon" width="24" height="24" aria-hidden="true">
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                  Services                    -->
+<!-- ============================================ -->
+
+<section id="services-2414">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex">
+                <span class="cs-topper">Service Areas</span>
+                <h2 class="cs-title">Proudly Serving New York's Capital Region</h2>
+                <p class="cs-text">
+                        Road Tech Paving LLC proudly provides residential asphalt paving, commercial paving, sealcoating, and asphalt repairs throughout New York's Capital Region. Explore the communities we serve below to learn more about our local paving services.                </p>
+                <a href="" class="cs-button-solid">Get A Free Estimate</a>
+            </div>
+            <div class="cs-image-group">
+                <picture class="cs-map">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/misc/locationsImgOpt.webp">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/misc/locationsImgOpt.webp">
+                    <img loading="lazy" decoding="async" src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/misc/locationsImgOpt.webp" alt="map new york's capital region" width="522" height="504">
+                </picture>
+                <!--Uncomment and remove the picture element if you want to swap in an iframe for your service area. Just copy and paste the iframe code and it will work!-->
+                <!-- <div class="cs-map cs-iframe">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d406268.9454942402!2d-122.14541772050325!3d37.29569939031045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fcae48af93ff5%3A0xb99d8c0aca9f717b!2sSan%20Jose%2C%20CA!5e0!3m2!1sen!2sus!4v1751015343187!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div> -->
+                <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/squiggle-arrow2.svg" alt="graphic" width="34" height="73" aria-hidden="true">
+                <div class="cs-box">
+                    <span class="cs-box-text">
+                        New York's Capital Region
+                    </span>
+                </div>
+            </div>        
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+    <a href="/ballston-spa-ny/" class="cs-link">
+        <picture class="cs-picture">
+            <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/locationImgs/ballstonSpaImg.png">
+            <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/locationImgs/ballstonSpaImg.png">
+            <img loading="lazy" decoding="async"
+                src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/locationImgs/ballstonSpaImg.png"
+                alt="Asphalt paving in Ballston Spa, NY"
+                width="184"
+                height="200">
+        </picture>
+
+        <h3 class="cs-h3">Ballston Spa, NY</h3>
+    </a>
+</li>
+            <li class="cs-item">
+    <a href="/saratoga-springs-ny/" class="cs-link">
+        <picture class="cs-picture">
+            <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/locationImgs/saratogaSpringImg.png">
+            <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/locationImgs/saratogaSpringImg.png">
+            <img loading="lazy" decoding="async"
+                src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/dog1.jpg"
+                alt="Asphalt paving in Saratoga Spings, NY"
+                width="184"
+                height="200">
+        </picture>
+
+        <h3 class="cs-h3">Saratoga Springs, NY</h3>
+    </a>
+</li>
+            <li class="cs-item">
+    <a href="/clifton-park-ny/" class="cs-link">
+        <picture class="cs-picture">
+            <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/locationImgs/cliftonParkImg.png">
+            <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/locationImgs/cliftonParkImg.png">
+            <img loading="lazy" decoding="async"
+                src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/locationImgs/cliftonParkImg.png"
+                alt="Asphalt paving in Clifton Park, NY"
+                width="184"
+                height="200">
+        </picture>
+
+        <h3 class="cs-h3">Clifton Park, NY</h3>
+    </a>
+</li>
+            <li class="cs-item">
+    <a href="/malta-ny/" class="cs-link">
+        <picture class="cs-picture">
+            <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/locationImgs/maltaImg.png">
+            <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/locationImgs/maltaImg.png">
+            <img loading="lazy" decoding="async"
+                src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/locationImgs/maltaImg.png"
+                alt="Asphalt paving in Malta, NY"
+                width="184"
+                height="200">
+        </picture>
+
+        <h3 class="cs-h3">Malta, NY</h3>
+    </a>
+</li>
+            <li class="cs-item">
+    <a href="/wilton-ny/" class="cs-link">
+        <picture class="cs-picture">
+            <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/locationImgs/wiltonImg.png">
+            <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/locationImgs/wiltonImg.png">
+            <img loading="lazy" decoding="async"
+                src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/services/locationImgs/wiltonImg.png"
+                alt="Asphalt paving in Wilton, NY"
+                width="184"
+                height="200">
+        </picture>
+
+        <h3 class="cs-h3">Wilton, NY</h3>
+    </a>
+</li>
+        </ul>
+    </div>
+</section>
+                                
+
+<!-- ============================================ -->
+<!--                   Steps                      -->
+<!-- ============================================ -->
+
+<section id="steps-1171">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Our Work Process</span>
+            <h2 class="cs-title">From Estimate to Finished Pavement</h2>
+            <p class="cs-text">
+                Every paving project is completed with clear communication, quality workmanship, and attention to detail. Here's what you can expect when working with Road Tech Paving LLC.            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/lightbulb.svg" alt="icon" width="40" height="40" loading="lazy" decoding="async" aria-hidden="true">
+                </picture>
+                <h3 class="cs-h3">Free Estimate</h3>
+                <p class="cs-item-p">
+                    We'll inspect your property, discuss your project goals, and provide a detailed estimate with honest recommendations at no cost.
+                </p>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/puzzle.svg" alt="icon" width="40" height="40" loading="lazy" decoding="async" aria-hidden="true">
+                </picture>
+                <h3 class="cs-h3">Project Planning</h3>
+                <p class="cs-item-p">
+                    Once you're ready to move forward, we'll review the scope of work, provide a written agreement, and schedule your project at a convenient time.
+                </p>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/gear.svg" alt="icon" width="40" height="40" loading="lazy" decoding="async" aria-hidden="true">
+                </picture>
+                <h3 class="cs-h3">Professional Installation</h3>
+                <p class="cs-item-p">
+                    Our experienced crew prepares the site correctly and completes the work using quality materials and proven paving techniques.
+                </p>
+            </li>
+            <li class="cs-item">
+                <picture class="cs-picture">
+                    <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/box.svg" alt="icon" width="40" height="40" loading="lazy" decoding="async" aria-hidden="true">
+                </picture>
+                <h3 class="cs-h3">Final Walkthrough</h3>
+                <p class="cs-item-p">
+                    Before we leave, we'll review the completed project with you to ensure everything meets our quality standards and your expectations.
+                </p>
+            </li>
+        </ul>
+    </div>
+    <!--Tire Screech-->
+    <img class="cs-graphic" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/tire-mark.svg" alt="icon" width="840" height="357" loading="lazy" decoding="async" aria-hidden="true">
+</section>
+                                
+                  
+<!-- ============================================ -->
+<!--                   Gallery                    -->
+<!-- ============================================ -->
+
+<section id="gallery-1446">
+    <div class="cs-container">
+        <div class="cs-content">
+            <div class="cs-flex">
+                <span class="cs-topper">Gallery</span>
+                <h2 class="cs-title">See Our Recent Asphalt Paving Projects</h2>
+            </div>
+        </div>
+        <!--Gallery-->
+        <div class="cs-gallery">
+            <!--Picture 1-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialEleven.webp">
+                <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialEleven.webp">
+                <img loading="lazy" decoding="async" src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialEleven.webp" alt="gallery" width="305" height="400">
+            </picture>
+            <!--Picture 2-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialTwo.webp">
+                <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialTwo.webp">
+                <img loading="lazy" decoding="async" src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialTwo.webp" alt="gallery" width="305" height="400">
+            </picture>
+            <!--Picture 3-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialFixTwo.webp">
+                <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialFixTwo.webp">
+                <img loading="lazy" decoding="async" src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialFixTwo.webp" alt="gallery" width="305" height="400">
+            </picture>
+            <!--Picture 4-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialTen.webp">
+                <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialTen.webp">
+                <img loading="lazy" decoding="async" src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialTen.webp" alt="gallery" width="305" height="400">
+            </picture>
+            <!--Picture 5-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialOne.webp">
+                <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialOne.webp">
+                <img loading="lazy" decoding="async" src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialOne.webp" alt="gallery" width="305" height="400">
+            </picture>
+            <!--Picture 6-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/TruckImg.webp">
+                <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/TruckImg.webp">
+                <img loading="lazy" decoding="async" src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/TruckImg.webp" alt="gallery" width="305" height="400">
+            </picture>
+            <!--Picture 7-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialAfter.webp">
+                <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialAfter.webp">
+                <img loading="lazy" decoding="async" src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialAfter.webp" alt="gallery" width="305" height="400">
+            </picture>
+            <!--Picture 8-->
+            <picture class="cs-image">
+                <source media="(max-width: 600px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialEleven.webp">
+                <source media="(min-width: 601px)" srcset="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialEleven.webp">
+                <img loading="lazy" decoding="async" src="https://roadtechpaving.nyc3.cdn.digitaloceanspaces.com/gallery/residentialEleven.webp" alt="gallery" width="305" height="400">
+            </picture>
+        </div>
+    </div>
+</section>
+                             
+<!-- ============================================ -->
+<!--                     FAQ                      -->
+<!-- ============================================ -->
+
+<section id="faq-489">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">FAQ</span>
+            <h2 class="cs-title">Have Questions About Our <span class="cs-color">Asphalt Paving Services?</span></h2>
+            <p class="cs-text">
+                        Whether you're planning a new driveway, commercial paving project, asphalt repair, or sealcoating service, we're here to help. Below are answers to some of the questions we hear most often.            </p>
+            <a href="/contact/" class="cs-button-solid">Contact Us</a>
+        </div>
+        <ul class="cs-faq-group">
+            <!-- Active class added as default -->
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        What paving services do you provide?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                    Road Tech Paving LLC offers residential asphalt paving, commercial paving, asphalt repairs, sealcoating, driveway installation, parking lot paving, and other professional asphalt services throughout New York's Capital Region.                </p>
+            </li>
+            <li class="cs-faq-item active">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        Do you provide free estimates?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                        Yes. We offer free, no-obligation estimates for every paving project. We'll evaluate your property, discuss your goals, and provide honest recommendations with transparent pricing.                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        What areas do you serve?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                        We're based in Ballston Spa, NY, and proudly serve homeowners and businesses throughout New York's Capital Region, including Saratoga Springs, Clifton Park, Malta, Wilton, and surrounding communities.                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        How do I know which service I need?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                        Our team will inspect your pavement and recommend the best solution based on its condition, your goals, and your budget. Whether you need a new installation, repairs, or preventative maintenance, we'll explain your options before any work begins.                </p>
+            </li>
+            <li class="cs-faq-item">
+                <button class="cs-button">
+                    <span class="cs-button-text">
+                        How do I get started?
+                    </span>
+                </button>
+                <p class="cs-item-p">
+                        Simply call us or fill out our contact form to schedule your free estimate. We'll inspect your property, answer your questions, and help you choose the right paving solution for your needs.                </p>
+            </li>
+        </ul>
+    </div>
+</section>
+      
+{% include 'sections/cta.html' %}
+<script defer>
+    const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
+        for (const item of faqItems) {
+            const onClick = () => {
+            item.classList.toggle('active')
+        }
+        item.addEventListener('click', onClick)
+        }
+                                
+</script>
+                                
+                                
+{% endblock %}
